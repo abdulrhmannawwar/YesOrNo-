@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For my love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="love.gif" alt="">
+        <p>Will you be mine?</p>
+        <div class="buttons">
+            <button id="yes">YES</button>
+            <button id="no">NO</button>
+        </div>
+    </div>
+    <script>
+        let noBtn = document.getElementById('no');
+        function getRandomInt(num) {
+            return Math.floor(Math.random() * num);
+        }
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        noBtn.addEventListener('click', () => {
+            noBtn.style.position = 'absolute';
+            let x = getRandomInt(width - 200);
+            let y = getRandomInt(height - 200);
+            noBtn.style.top = `${y}px`;
+            noBtn.style.left = `${x}px`;
+        });
+        let img = document.querySelector('img');
+        let yesBtn = document.getElementById('yes');   
+        let p = document.querySelector('p');
+        yesBtn.addEventListener('click', () => {
+            img.src = 'milk-and-mocha.gif';
+            img.style.mixBlendMode = 'unset';
+            p.textContent = 'Yayyyyyyyy >.<'
+            yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
